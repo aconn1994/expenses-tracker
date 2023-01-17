@@ -9,13 +9,15 @@ import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ProgressDisplayComponent } from './components/progress-display/progress-display.component';
+import { ActivityStatusPipe } from './pipes/activity-status.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
-    ProgressDisplayComponent
+    ProgressDisplayComponent,
+    ActivityStatusPipe
   ],
   imports: [
     BrowserModule,

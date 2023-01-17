@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+export interface CardActivity {
+  chargedBy: string;
+  date: string;
+  charge: number;
+  status: boolean;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+const ELEMENT_DATA: CardActivity[] = [
+  {date: '08/23/21', chargedBy: 'Netflix', charge: 10.99, status: true},
+  {date: '07/01/21', chargedBy: 'Amazon', charge: 12.99, status: true},
+  {date: '07/01/21', chargedBy: 'Arlington Developers LLC', charge: 1995, status: true},
+  {date: '06/30/21', chargedBy: 'PSEG', charge: 37, status: true},
+  {date: '06/14/21', chargedBy: 'Conservice', charge: 9, status: true},
+  {date: '06/10/21', chargedBy: 'Arlington Developers LLC', charge: 1995, status: false},
+  {date: '06/09/21', chargedBy: 'Pornhub', charge: 20000, status: false},
+  {date: '06/07/21', chargedBy: 'Ubisoft', charge: 1100, status: true},
+  {date: '06/04/21', chargedBy: 'Costco', charge: 500, status: false},
+  {date: '06/01/21', chargedBy: 'Shop n Shop', charge: 85, status: false},
 ];
 
 @Component({
@@ -26,7 +26,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['date', 'chargedBy', 'charge', 'status'];
   dataSource = ELEMENT_DATA;
 
   constructor() { }

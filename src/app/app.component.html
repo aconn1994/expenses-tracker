@@ -31,20 +31,13 @@
 
   </div>
 
-  <div class="progress-spinners">
-    <app-progress-display
+  <div class="progress-spinners" *ngFor="let account of accountsProgress">
+      <app-progress-display
       class="progress-display"
-      color="warn"
-      [progressValue]="60"
-      label="Checking Account"
-      [accountValue]="3500"
-    ></app-progress-display>
-    <app-progress-display
-      class="progress-display"
-      color="accent"
-      [progressValue]="80"
-      label="Savings Account"
-      [accountValue]="28546"
+      [color]="account.color"
+      [progressValue]="account.progressValue"
+      [label]="account.accountName"
+      [accountValue]="account.accountValue"
     ></app-progress-display>
   </div>
 
