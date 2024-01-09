@@ -31,14 +31,16 @@
 
   </div>
 
-  <div class="progress-spinners" *ngFor="let account of accountsProgress">
-      <app-progress-display
-      class="progress-display"
-      [color]="account.color"
-      [progressValue]="account.progressValue"
-      [label]="account.accountName"
-      [accountValue]="account.accountValue"
-    ></app-progress-display>
+  <div class="progress-spinners">
+      <ng-container *ngFor="let account of accountsProgress">
+        <app-progress-display
+        class="progress-display"
+        [color]="account.color"
+        [progressValue]="account.progressValue"
+        [label]="account.accountName"
+        [accountValue]="account.accountValue"
+      ></app-progress-display>
+      </ng-container>
   </div>
 
   <app-table></app-table>
